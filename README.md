@@ -65,7 +65,8 @@ All for **single-end  reads**
 
 ```shell
 # cleaning
-fastp -l 20 --thread 1 -y -t 1 -x -a AGATCGGAAGAGC -f 2 -i input.fq.gz -o output2.fq.gz;
+fastp -l 20 --thread 1 -y -t 1 -x -a AGATCGGAAGAGC -f 2 \
+    -i input.fq.gz -o output2.fq.gz;
 
 # aligning
 STAR --genomeDir $STARREF --readFilesCommand zcat \
