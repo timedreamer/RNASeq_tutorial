@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" modified="2023-10-20T20:36:50.872Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46" etag="FhtezBbaEney4_DkbVxV" version="22.0.6" type="device">
+  <diagram name="Page-1" id="JdJNeL035dL0oQE3YnYG">
+    <mxGraphModel dx="617" dy="393" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="jvVMpGYpSncDv33kW9gz-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="jvVMpGYpSncDv33kW9gz-1" target="jvVMpGYpSncDv33kW9gz-2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="150" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="340" y="130" />
+              <mxPoint x="340" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-10" value="mv; cp; rsync" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jvVMpGYpSncDv33kW9gz-7" vertex="1" connectable="0">
+          <mxGeometry x="-0.2676" y="1" relative="1" as="geometry">
+            <mxPoint x="7" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-1" value="Raw reads at GeneCore&lt;br&gt;(fastq)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jvVMpGYpSncDv33kW9gz-2" target="jvVMpGYpSncDv33kW9gz-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="150" />
+              <mxPoint x="420" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-11" value="&lt;font color=&quot;#ea6b66&quot;&gt;fastp;&lt;/font&gt; BBduk; Cutadapt" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jvVMpGYpSncDv33kW9gz-8" vertex="1" connectable="0">
+          <mxGeometry x="0.0086" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-2" value="Raw reads in $SCRATCH&lt;br&gt;(fastq)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="100" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jvVMpGYpSncDv33kW9gz-4" target="jvVMpGYpSncDv33kW9gz-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-12" value="Text" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jvVMpGYpSncDv33kW9gz-9" vertex="1" connectable="0">
+          <mxGeometry x="-0.0819" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-13" value="&lt;font color=&quot;#ea6b66&quot;&gt;STAR&lt;/font&gt;; HISAT2; GSNAP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jvVMpGYpSncDv33kW9gz-9" vertex="1" connectable="0">
+          <mxGeometry x="-0.0724" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-4" value="Clean reads&lt;br&gt;(fastq)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="360" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="jvVMpGYpSncDv33kW9gz-5" target="jvVMpGYpSncDv33kW9gz-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-15" value="&lt;font color=&quot;#ea6b66&quot;&gt;featureCounts&lt;/font&gt;; htseq" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jvVMpGYpSncDv33kW9gz-14" vertex="1" connectable="0">
+          <mxGeometry x="-0.3583" relative="1" as="geometry">
+            <mxPoint y="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-5" value="Alligned reads&lt;br&gt;(bam)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="200" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="jvVMpGYpSncDv33kW9gz-6" value="Count matrix&lt;br&gt;(tsv)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
