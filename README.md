@@ -2,6 +2,7 @@
 
 Author: Ji Huang
 
+Last update: 2023-10-27
 
 ## 1. Environment preparation
 
@@ -19,6 +20,8 @@ You will need a text editor to create/modify files on the server.
 
 I like: Vim, VScode and Sublime Text.
 
+Helper: `find .vscode-server/ -type f | wc -l`
+
 ### R
 
 Once you generate the expression count matrix, you will mostly work in R for the RNA-Seq analysis.
@@ -33,6 +36,9 @@ The Basic pipeline that works with most of the RNA-seq data without UMI.
 
 
 ## 3. Slurm
+
+![](content/2023-10-27-16-18-25.png)
+[Source](https://sabryr.github.io/)
 
 Some slurm command that I use:
 
@@ -181,7 +187,7 @@ Prepare a slurm job for building genome index for HISAT2.
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=4  # modify this
-#SBATCH --time=1:00:00     # modify this
+#SBATCH --time=00:30:00     # modify this
 #SBATCH --mem=8GB          # modify this
 #SBATCH --job-name=hisat2-build    # modify this
 #SBATCH --mail-type=NONE
@@ -210,7 +216,7 @@ samtools view -h DIV1_p1.bam|head -n 20
 
 hisat2 -p 2 -x ${REF} -U EV_p1_clean.fq.gz 2>EV_p1.aln.info | samtools view -bSh - | samtools sort -o EV_p1.bam -
 
-featureCounts -s 1 -T 2 -a $GTF -o final.feacureCounts output2.bam
+featureCounts -s 1 -T 2 -a $GTF -o final.featureCounts output2.bam
 ```
 
 Put everything in a loop in Linux.
