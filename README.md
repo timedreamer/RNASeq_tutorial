@@ -154,11 +154,9 @@ mv SRR8699970.fastq.gz DIV1_rep1.fastq.gz
 mv SRR8699958.fastq.gz EV_rep1.fastq.gz
 
 ## Only use 10000 reads
-zcat DIV1_rep1.fastq.gz |head -n 40000 > DIV1_p1.fq.gz
-zcat EV_rep1.fastq.gz |head -n 40000 > EV_p1.fq.gz
+zcat DIV1_rep1.fastq.gz |head -n 40000 | gzip > DIV1_p1.fq.gz
+zcat EV_rep1.fastq.gz |head -n 40000 | gzip > EV_p1.fq.gz
 ```
-
-
 
 Clean reads
 
@@ -227,7 +225,8 @@ samtools view -h DIV1_p1.bam|head -n 20
 
 hisat2 -p 2 -x ${REF} -U EV_p1_clean.fq.gz 2>EV_p1.aln.info | samtools view -bSh - | samtools sort -o EV_p1.bam -
 
-featureCounts -s 1 -T 2 -a $GTF -o final.featureCounts output2.bam
+GTF="/scratch/jh6577/tutorial_workshop/genome/genome.gtf"
+featureCounts -T 2 -a "${GTF}" -o final.featureCounts *.bam
 ```
 
 Put everything in a loop in Linux.
