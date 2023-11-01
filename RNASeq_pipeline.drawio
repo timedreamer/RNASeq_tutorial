@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-10-20T20:36:50.872Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.46" etag="FhtezBbaEney4_DkbVxV" version="22.0.6" type="device">
+<mxfile host="app.diagrams.net" modified="2023-11-01T15:19:08.346Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/119.0" etag="-hoDKU4aNsKhGZPugssH" version="22.0.8" type="device">
   <diagram name="Page-1" id="JdJNeL035dL0oQE3YnYG">
-    <mxGraphModel dx="617" dy="393" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="989" dy="539" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -45,9 +45,9 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="jvVMpGYpSncDv33kW9gz-13" value="&lt;font color=&quot;#ea6b66&quot;&gt;STAR&lt;/font&gt;; HISAT2; GSNAP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jvVMpGYpSncDv33kW9gz-9" vertex="1" connectable="0">
+        <mxCell id="jvVMpGYpSncDv33kW9gz-13" value="&lt;font color=&quot;#ea6b66&quot;&gt;HISAT2&lt;/font&gt;; STAR; BBMAP" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="jvVMpGYpSncDv33kW9gz-9" vertex="1" connectable="0">
           <mxGeometry x="-0.0724" y="4" relative="1" as="geometry">
-            <mxPoint as="offset" />
+            <mxPoint y="-4" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="jvVMpGYpSncDv33kW9gz-4" value="Clean reads&lt;br&gt;(fastq)" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">

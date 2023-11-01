@@ -32,7 +32,7 @@ RStudio, RStudio server, Jupyter Notebook.
 
 The Basic pipeline that works with most of the RNA-seq data without UMI.
 
-![](content/2023-10-20-16-37-23.png)
+![](content/RNASeq_pipeline.png)
 
 
 ## 3. Slurm
