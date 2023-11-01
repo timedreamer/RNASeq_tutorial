@@ -92,20 +92,25 @@ featureCounts -s 1 -T 2 -a $GTF -o final.feacureCounts output2.bam
 
 1. `fastq` format. [Wiki](https://en.wikipedia.org/wiki/FASTQ_format)
 
-> A FASTQ file has four line-separated fields per sequence:
+```
+A FASTQ file has four line-separated fields per sequence:
 Field 1 begins with a '@' character and is followed by a sequence identifier and an optional description (like a FASTA title line).
 Field 2 is the raw sequence letters.
 Field 3 begins with a '+' character and is optionally followed by the same sequence identifier (and any description) again.
 Field 4 encodes the quality values for the sequence in Field 2, and must contain the same number of symbols as letters in the sequence.
+```
 
+```
 >@SRR8699958.1 1/1
 CGGGACTATACATTTACAACAAAAAGAAACAAATCTTGTGGTCAAAGTTTCCATACGTAGCTTCTCTTCTCTACAC
->+
++
 AAA/A/EAE6AAAE/EEEA/EEEEE6AEEEEAE6/E/////EEEEE6E/E/EA/EA//E/6/6EEEEE/E<EAE/6
+```
 
 2. `gtf` format. [GFF/GTF File Format - Definition and supported options](https://useast.ensembl.org/info/website/upload/gff.html)
 
-> #!genome-build TAIR10
+```
+#!genome-build TAIR10
 #!genome-version TAIR10
 #!genome-date 2008-04
 #!genome-build-accession GCA_000001735.1
@@ -115,10 +120,12 @@ AAA/A/EAE6AAAE/EEEA/EEEEE6AEEEEAE6/E/////EEEEE6E/E/EA/EA//E/6/6EEEEE/E<EAE/6
 1       araport11       exon    10944317        10944727        .       -       .       gene_id "AT1G30814"; transcript_id "AT1G30814.1"; exon_number "1"; gene_name "AT1G30814"; gene_source "araport11"; gene_biotype "protein_coding"; transcript_name "AT1G30814-203"; transcript_source "araport11"; transcript_biotype "protein_coding"; exon_id "AT1G30814.1.exon1"; tag "Ensembl_canonical";
 1       araport11       exon    10944078        10944229        .       -       .       gene_id "AT1G30814"; transcript_id "AT1G30814.1"; exon_number "2"; gene_name "AT1G30814"; gene_source "araport11"; gene_biotype "protein_coding"; transcript_name "AT1G30814-203"; transcript_source "araport11"; transcript_biotype "protein_coding"; exon_id "AT1G30814.1.exon2"; tag "Ensembl_canonical";
 1       araport11       CDS     10944078        10944225        .       -       0       gene_id "AT1G30814"; transcript_id "AT1G30814.1"; exon_number "2"; gene_name "AT1G30814"; gene_source "araport11"; gene_biotype "protein_coding"; transcript_name "AT1G30814-203"; transcript_source "araport11"; transcript_biotype "protein_coding"; protein_id "AT1G30814.1"; tag "Ensembl_canonical";
+```
 
 3. `sam` format. And it's binary `bam` format. [sam](https://en.wikipedia.org/wiki/SAM_(file_format)). [bam](https://en.wikipedia.org/wiki/Binary_Alignment_Map)
 
->@HD     VN:1.0  SO:coordinate
+```
+@HD     VN:1.0  SO:coordinate
 @SQ     SN:1    LN:30427671
 @SQ     SN:2    LN:19698289
 @SQ     SN:3    LN:23459830
@@ -133,6 +140,7 @@ AAA/A/EAE6AAAE/EEEA/EEEEE6AEEEEAE6/E/////EEEEE6E/E/EA/EA//E/6/6EEEEE/E<EAE/6
 SRR8699970.696  0       1       3904    60      10M82N63M       *       0       0       AACTTGCGCTTCCAGTCAAAGTACAAATCGAGAGATGCTATGTGGTACTTCTTCTCTCGTAGAGAAAACAACA       AAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE  AS:i:0  XN:i:0  XM:i:0  XO:i:0  XG:i:0  NM:i:0  MD:Z:73 YT:Z:UU XS:A:+  NH:i:1
 SRR8699970.3584 0       1       4216    60      61M209N12M      *       0       0       CAAAACCAAATCTGATTGGGTTATCCACGAGTTCCACTACGACCTCTTACCAGAACATCAGAGGACATATGTC       AAAE6AAEEAEEE/EEEEAEE/EE/AEEAEAEE/EE</A<E<A<EEEEAEEEAEAEEEEE/AEEEEEEEEAE<  AS:i:0  XN:i:0  XM:i:0  XO:i:0  XG:i:0  NM:i:0  MD:Z:73 YT:Z:UU XS:A:+  NH:i:1
 SRR8699970.5292 0       1       4855    60      73M     *       0       0       TTTTGCAAATCACGGCGGTCAGTGGCTGAGTGACTATATCGACCTGCAACAGCAAGTTCCTTACTTGGCACCT       AAAEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE<EEE  AS:i:0  XN:i:0  XM:i:0  XO:i:0  XG:i:0  NM:i:0  MD:Z:73 YT:Z:UU NH:i:1
+```
 
 ## 6. Hands-on
 
@@ -151,7 +159,13 @@ mv SRR8699958.fastq.gz EV_rep1.fastq.gz
 ## Only use 10000 reads
 zcat DIV1_rep1.fastq.gz |head -n 40000 > DIV1_p1.fq.gz
 zcat EV_rep1.fastq.gz |head -n 40000 > EV_p1.fq.gz
+```
 
+
+
+Clean reads
+
+```shell
 ## Clean reads
 module load fastp/intel/0.20.1
 fastp -l 20 --thread 1 -y -t 1 -x -a AGATCGGAAGAGC -f 2 -i DIV1_p1.fq.gz -o DIV1_p1_clean.fq.gz;
@@ -262,13 +276,10 @@ fastp -l 20 --thread 1 -y -t 1 -x -a AGATCGGAAGAGC -f 2 -i "$FILE" -o "$OUTPUT"
 ```
 
 Workflows:
-    1. [Nextflow](https://www.nextflow.io/)
-    2. [Snakemake](https://snakemake.readthedocs.io/en/stable/)
-    3. [Workflow Description Language (WDL)](https://openwdl.org/)
 
-
-
-
+1. [Nextflow](https://www.nextflow.io/)
+2. [Snakemake](https://snakemake.readthedocs.io/en/stable/)
+3. [Workflow Description Language (WDL)](https://openwdl.org/)
 
 ## 7. From count matrix to results
 
