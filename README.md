@@ -2,7 +2,7 @@
 
 Author: Ji Huang
 
-Last update: 2023-10-27
+Last update: 2023-11-01
 
 ## 1. Environment preparation
 
@@ -78,11 +78,8 @@ fastp -l 20 --thread 1 -y -t 1 -x -a AGATCGGAAGAGC -f 2 \
     -i input.fq.gz -o output2.fq.gz;
 
 # aligning
-STAR --genomeDir $STARREF --readFilesCommand zcat \
-    --runThreadN 8 --readFilesIn output2.fq.gz \
-    --outFilterType BySJout --outFilterMultimapNmax 20 \
-    --outSAMattributes NH HI NM MD \
-    --outSAMtype BAM SortedByCoordinate
+hisat2 -p 2 -x ${REF} -U output2.fq.gz 2>aln.info | \
+    samtools view -bSh - | samtools sort -o output2.bam -
 
 # counting
 featureCounts -s 1 -T 2 -a $GTF -o final.feacureCounts output2.bam
