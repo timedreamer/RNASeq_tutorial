@@ -2,17 +2,35 @@
 
 Author: Ji Huang
 
-Last update: 2023-11-01
+Date: 2023-10-31
+
+Last update: 2023-11-17
+
+- [Tutorial on RNA-Seq analysis](#tutorial-on-rna-seq-analysis)
+  - [1. Environment preparation](#1-environment-preparation)
+    - [Terminal and SSH key](#terminal-and-ssh-key)
+    - [Text editor](#text-editor)
+    - [R](#r)
+  - [2. Pipeline](#2-pipeline)
+  - [3. Slurm](#3-slurm)
+  - [4. Reads cleaning, aligning and counting](#4-reads-cleaning-aligning-and-counting)
+  - [5. Files](#5-files)
+  - [6. Hands-on](#6-hands-on)
+  - [7. Other options to scale up](#7-other-options-to-scale-up)
+  - [8. From count matrix to results](#8-from-count-matrix-to-results)
+
 
 ## 1. Environment preparation
 
-### Terminal
+### Terminal and SSH key
 
 You will need a terminal to interact with the server. Many cases, you will also need a FTP client to upload/download files to the server.
 
 On windows, I like: Windows Terminal, Putty, MobaXterm, WinSCP, and FileZilla.
 
 [tmux](https://github.com/tmux/tmux) is very good helper.
+
+You can [set up the ssh key](./setup_ssh_key.md) for a faster and better connection to the server.
 
 ### Text editor
 
@@ -246,7 +264,7 @@ for file in *_clean.fq.gz; do
 done
 ```
 
-## 6. Other options to scale up
+## 7. Other options to scale up
 
 [SLURM Job Arrays](https://slurm.schedmd.com/job_array.html)
 
@@ -277,7 +295,7 @@ Workflows:
 2. [Snakemake](https://snakemake.readthedocs.io/en/stable/)
 3. [Workflow Description Language (WDL)](https://openwdl.org/)
 
-## 7. From count matrix to results
+## 8. From count matrix to results
 
 Once you have the count matrix, you can use R to analyze it. DESeq2, limma, edgeR are the most popular packages for Differential Expression analysis.
 
